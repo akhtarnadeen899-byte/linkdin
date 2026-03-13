@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadeem VA Manager | Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .amazon-gradient { background: linear-gradient(135deg, #ff9900 0%, #ffb347 100%); }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="flex h-screen overflow-hidden">
+        <!-- Sidebar -->
+        <aside class="w-64 glass border-r border-slate-700 p-6 flex flex-col">
+            <div class="mb-10">
+                <span class="text-orange-500 font-bold text-2xl tracking-tight">VA Hub</span>
+            </div>
+            <nav class="flex-1 space-y-2">
+                <a href="#" class="flex items-center p-3 rounded-lg bg-orange-500 text-slate-900 font-semibold">
+                    <span class="ml-2">Dashboard</span>
+                </a>
+                <a href="#" class="flex items-center p-3 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+                    <span class="ml-2">Services</span>
+                </a>
+            </nav>
+            <div class="pt-4 border-t border-slate-700">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded-full amazon-gradient flex items-center justify-center font-bold text-slate-900">NA</div>
+                    <div class="ml-3">
+                        <p class="text-sm font-medium">Nadeem Akhtar</p>
+                        <p class="text-xs text-slate-500">Amazon VA Expert</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <main class="flex-1 overflow-y-auto p-8">
+            <header class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-bold">Dashboard Overview</h1>
+                <span class="text-xs bg-orange-500/20 text-orange-500 px-3 py-1 rounded-full border border-orange-500/30">Local Mode</span>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="glass p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-orange-500">Welcome, Nadeem</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        Your standalone dashboard is active. You can now manage your Amazon VA business even without a WordPress subscription.
+                    </p>
+                </div>
+                <div class="amazon-gradient p-8 rounded-2xl text-slate-900">
+                    <h3 class="text-xl font-bold mb-4">Pro Tip</h3>
+                    <p class="font-medium">Using this Chrome Extension allows you to access your lead data instantly from any tab.</p>
+                </div>
+            </div>
+
+            <div class="glass p-8 rounded-2xl">
+                <h3 class="text-xl font-bold mb-6">LinkedIn Content</h3>
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700 mb-6 text-slate-300">
+                    🚀 Ready to Scale Your Amazon Business? I'm Nadeem Akhtar, your dedicated Amazon Virtual Assistant. Specializing in high-ROI PPC strategies...
+                </div>
+                <button onclick="copyPost()" id="copyBtn" class="amazon-gradient text-slate-900 px-6 py-3 rounded-xl font-bold hover:shadow-lg transition-all">
+                    Copy Post Content
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function copyPost() {
+            const content = `🚀 Ready to Scale Your Amazon Business? I'm Nadeem Akhtar, your dedicated Amazon Virtual Assistant. Specializing in high-ROI PPC strategies, surgical Keyword Research (Helium 10/Jungle Scout), and SEO-optimized listings that convert. Let's dominate the A9 algorithm together! 📈 #AmazonVA #FBAExpert #NadeemAkhtar`;
+            navigator.clipboard.writeText(content).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.innerText = 'Copied!';
+                btn.style.backgroundColor = '#22c55e';
+                setTimeout(() => {
+                    btn.innerText = 'Copy Post Content';
+                    btn.style.backgroundColor = '';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
